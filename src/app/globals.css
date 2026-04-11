@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #bc13fe;
+  --color-dark-bg: #1a1a2e;
+  --color-card-bg: #1e1e34;
+}
+
+@layer base {
+  :root {
+    --background: #1a1a2e;
+    --foreground: #ffffff;
+    --shadow-dark: rgba(5, 5, 15, 0.7);
+    --shadow-light: rgba(50, 50, 80, 0.4);
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── Neumorphism Utilities ─── */
+
+/* Raised surface — feels like a soft, elevated card */
+.neu {
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Pressed / inset surface — input fields, badges */
+.neu-inset {
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  box-shadow:
+    inset 4px 4px 10px var(--shadow-dark),
+    inset -4px -4px 10px var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Flat card that lifts on hover */
+.neu-flat {
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  box-shadow:
+    6px 6px 14px var(--shadow-dark),
+    -6px -6px 14px var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+}
+.neu-flat:hover {
+  box-shadow:
+    10px 10px 20px var(--shadow-dark),
+    -10px -10px 20px var(--shadow-light);
+  transform: translateY(-3px);
+}
+
+/* Small pill / chip */
+.neu-chip {
+  background: var(--color-card-bg);
+  border-radius: 0.5rem;
+  box-shadow:
+    3px 3px 8px var(--shadow-dark),
+    -3px -3px 8px var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* ─── Text & Accent Utilities ─── */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-neon-blue), var(--color-neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.neon-border {
+  box-shadow:
+    0 0 12px rgba(0, 243, 255, 0.25),
+    inset 0 0 12px rgba(0, 243, 255, 0.08),
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  border: 1px solid rgba(0, 243, 255, 0.4);
+  border-radius: 1rem;
+}
+
+.hover-glow:hover {
+  box-shadow:
+    0 0 20px rgba(188, 19, 254, 0.35),
+    8px 8px 20px var(--shadow-dark),
+    -8px -8px 20px var(--shadow-light);
+}
