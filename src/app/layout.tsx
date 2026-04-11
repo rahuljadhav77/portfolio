@@ -7,7 +7,7 @@ import InteractiveGrid from "@/components/InteractiveGrid";
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  title: "Rahul Jadhav | Senior Software Engineer",
+  title: "RJ Dev Portfolio",
   description: "Portfolio of Rahul Jadhav, Senior Software Engineer specializing in backend systems, Kafka, and distributed architecture.",
 };
 
